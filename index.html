@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>キーボードの使い方</title>
+    <title>パソコンによる各種文字の入力</title>
     <style>
+        body {
+            width: 80%;
+            margin: auto;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        h1 {
+            margin-bottom: 100px;
+        }
+        h2 {
+            margin-top: 80px;
+            border-bottom: 1px solid #333;
+        }
+        p {
+            text-indent: 1em;
+        }
         pre, code {
             font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
         }
@@ -14,10 +30,13 @@
         :invalid {
             background-color: bisque;
         }
+        footer {
+            margin-top: 80px;
+        }
     </style>
 </head>
 <body>
-    <h1>キーボードの使い方説明アプリ</h1>
+    <h1>パソコンによる各種文字の入力</h1>
 
     <h2>全角と半角</h2>
     <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
@@ -48,6 +67,7 @@
         <li>
             <code>abc（半角）</code>
             <input type="text" pattern="abc">
+            ← 入力してください（以下同様）
         </li>
         <li>
             <code>ａｂｃ（全角）</code>
@@ -93,10 +113,27 @@
             <input type="text" pattern="2/3">
         </li>
         <li>
-            <code>"Hello, Ellen!"（半角）</code>
-            <input type="text" pattern='"Hello, Ellen!"'>
+            <code>1+2=3（半角）</code>
+            <input type="text" pattern="1\+2=3">
+        </li>
+        <li>
+            <code>"Hello!"（半角）</code>
+            <input type="text" pattern='"Hello!"'>
+        </li>
+        <li>
+            <code>(^o^)/（半角）</code>
+            <input type="text" pattern='\(\^o\^\)/'>
+        </li>
+        <li>
+            <code>(@_@)???（半角）</code>
+            <input type="text" pattern='\(@_@\)\?\?\?'>
         </li>
     </ol>
+
+    <footer>
+        <hr>
+        
+    </footer>
 
 </body>
 </html>
