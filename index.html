@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キーボードの使い方</title>
+    <style>
+        :valid {
+            background-color: aliceblue;
+        }
+        :invalid {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>キーボードの使い方説明アプリ</h1>
+
+    <h2>全角と半角</h2>
+    <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
+    例えば、AとＡ、違いが分かりますか。
+    これならどうでしょう。
+    <pre>
+    ABC
+    ＡＢＣ
+    </pre>
+    </p>
+    <p>
+        みなさんが見ているパソコン環境によってはほぼ同じに見えるかもしれませんが、
+        人間にとっては字体の違いでしかなくことが多いでしょう。    
+    </p>
+    <p>
+        しかし、パソコン内部においては、全く異なるデータです。
+        我々がパソコンに指示する場合（プログラミングなど）には、気をつけて使い分けなければなりません。
+        また、パスワードなどもこういう区別をしますので、入力の際、正しく使い分けられていないとログイン（使用開始許可の状態になり、自分の使用領域を与えられること）できません。
+    </p>
+
+    <h3>練習</h3>
+
+    <ol>
+        <li>
+            <code>ABC（半角）</code>
+            <input type="text" pattern="ABC">
+        </li>
+        <li>
+            <code>ＡＢＣ（全角）</code>
+            <input type="text" pattern="ＡＢＣ">
+        </li>
+    </ol>
+</body>
+</html>
