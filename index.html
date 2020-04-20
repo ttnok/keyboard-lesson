@@ -6,13 +6,16 @@
     <title>パソコンによる各種文字の入力</title>
     <style>
         body {
+            border: 0;
+            margin: 0;
+        }
+        header {
+            background-color: hsl(202, 93%, 82%);
+            padding: 100px 20px 50px;
+        }
+        main {
             width: 80%;
             margin: auto;
-            padding-top: 100px;
-            padding-bottom: 100px;
-        }
-        h1 {
-            margin-bottom: 100px;
         }
         h2 {
             margin-top: 80px;
@@ -32,6 +35,9 @@
         }
         footer {
             margin-top: 80px;
+            height: 100px;
+            background-color: hsl(0, 0%, 95%);
+            padding: 100px 20px 50px;
         }
         .attention {
             background-color: beige;
@@ -41,125 +47,129 @@
     </style>
 </head>
 <body>
-    <h1>パソコンによる各種文字の入力練習アプリ</h1>
+    <header>
+        <h1>パソコンによる各種文字の入力練習アプリ</h1>
 
-    <p>
-        このページではパソコンでの文字入力の仕方を説明します。
-        スマホなどで開いている場合は、パソコンで開き直しましょう。
-    </p>
-
-    <h2>全角と半角</h2>
-    <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
-    例えば、AとＡ、違いが分かりますか。
-    これならどうでしょう。
-    <pre>
-    ABC
-    ＡＢＣ
-    </pre>
-    </p>
-    <p>
-        確かに違って見えますが、字体の違いでしかないように思えます。    
-    </p>
-    <p>
-        しかし、パソコン内部においては、全く異なるデータです。
-        我々がパソコンに指示する場合（プログラミングなど）には、気をつけて使い分けなければなりません。
-        また、パスワードなどもこういう区別をしますので、入力の際、正しく使い分けられていないとログイン（使用開始許可の状態になり、自分の使用領域を与えられること）できません。
-    </p>
-
-    <h3>練習</h3>
-
-    <p>全角と半角のアルファベットを使い分けましょう。
-        Windowsの場合、「全角/半角」キーを適宜押して、全角、半角を切り替えてください。
-        Mac の場合は、スペースキーの右隣りの「かな」キーを押すと全角になり、右隣りの「英数」キーを押すと半角になります。
-    </p>
-
-    <ol>
-        <li>
-            <code>abc（半角）</code>
-            <input type="text" pattern="abc" required>
-            ← 入力してください。正しく入力できると青くなります（以下同様）
-        </li>
-        <li>
-            <code>ａｂｃ（全角）</code>
-            <input type="text" pattern="ａｂｃ" required>
-        </li>
-    </ol>
-
-    <h2>半角の小文字と大文字</h2>
-
-    <p>
-        アルファベットの大文字を入力したいときは Shift キーを押しつつ、
-        入力したいキーを押します。
-    </p>
-
-    <h3>練習</h3>
-    <ol>
-        <li>
-            <code>abc（半角小文字）</code>
-            <input type="text" pattern="abc" required>
-        </li>
-        <li>
-            <code>ABC（半角大文字）</code>
-            <input type="text" pattern="ABC" required>
-        </li>
-    </ol>
-
-
-    <h2>半角の記号いろいろ</h2>
-    <p>パスワードやプログラミング記号などでよく用いられる記号類の入力法について確認しておきましょう。
-        Windowsの人はスマホのソフトウェアキーボードにある地球儀ボタンとパソコンの「全角/半角」ボタンは働きが異なるということに注意してください。
-        全く別のものとして使い方を覚えるといいでしょう。
-        以下の説明をよく読んでください。
-    </p>
-    <p>まずは、半角を入力するモードに切り替えてください。
-        以下の操作では全角、半角を切り替える操作は必要ありません。
-        キーに印字されている文字のうち、12時方向に書いてある文字を入力するには Shift キーを押しつつ、
-        入力したいキーを押します。
-    </p>
-
-    <div class="attention">
-        <h3>
-            <strong>パソコンがSurfaceの場合の注意</strong>
-        </h3>
         <p>
-            Surfaceパソコンの場合で、キーボードカバーを利用している場合（ほとんどだと思いますが）、
-            記号類キーの刻印通りに入力できない場合があります。
-            下記ページをよく読んで設定してください。
+            このページではパソコンでの文字入力の仕方を説明します。
+            スマホなどで開いている場合は、パソコンで開き直しましょう。
+        </p>    
+    </header>
 
+    <main>
+        <h2>全角と半角</h2>
+        <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
+        例えば、AとＡ、違いが分かりますか。
+        これならどうでしょう。
+        <pre>
+        ABC
+        ＡＢＣ
+        </pre>
         </p>
         <p>
-            <a href="https://www.oit.ac.jp/japanese/news/detail.php?i=6354">
-                【情報センターからのお知らせ】必携端末としてSurfaceを利用される方へ | お知らせ情報 | 大阪工業大学
-            </a>
+            確かに違って見えますが、字体の違いでしかないように思えます。    
         </p>
-    </div>
+        <p>
+            しかし、パソコン内部においては、全く異なるデータです。
+            我々がパソコンに指示する場合（プログラミングなど）には、気をつけて使い分けなければなりません。
+            また、パスワードなどもこういう区別をしますので、入力の際、正しく使い分けられていないとログイン（使用開始許可の状態になり、自分の使用領域を与えられること）できません。
+        </p>
 
-    <h3>練習</h3>
-    <ol>
-        <li>
-            <code>2/3（半角）</code>
-            <input type="text" pattern="2/3" required>
-        </li>
-        <li>
-            <code>1+2=3（半角）</code>
-            <input type="text" pattern="1\+2=3" required>
-        </li>
-        <li>
-            <code>"Hello!"（半角）</code>
-            <input type="text" pattern='"Hello!"' required>
-        </li>
-        <li>
-            <code>(^o^)/（半角）</code>
-            <input type="text" pattern='\(\^o\^\)/' required>
-        </li>
-        <li>
-            <code>(@_@)???（半角）</code>
-            <input type="text" pattern='\(@_@\)\?\?\?' required>
-        </li>
-    </ol>
+        <h3>練習</h3>
 
+        <p>全角と半角のアルファベットを使い分けましょう。
+            Windowsの場合、「全角/半角」キーを適宜押して、全角、半角を切り替えてください。
+            Mac の場合は、スペースキーの右隣りの「かな」キーを押すと全角になり、右隣りの「英数」キーを押すと半角になります。
+        </p>
+
+        <ol>
+            <li>
+                <code>abc（半角）</code>
+                <input type="text" pattern="abc" required>
+                ← 入力してください。正しく入力できると青くなります（以下同様）
+            </li>
+            <li>
+                <code>ａｂｃ（全角）</code>
+                <input type="text" pattern="ａｂｃ" required>
+            </li>
+        </ol>
+
+        <h2>半角の小文字と大文字</h2>
+
+        <p>
+            アルファベットの大文字を入力したいときは Shift キーを押しつつ、
+            入力したいキーを押します。
+        </p>
+
+        <h3>練習</h3>
+        <ol>
+            <li>
+                <code>abc（半角小文字）</code>
+                <input type="text" pattern="abc" required>
+            </li>
+            <li>
+                <code>ABC（半角大文字）</code>
+                <input type="text" pattern="ABC" required>
+            </li>
+        </ol>
+
+
+        <h2>半角の記号いろいろ</h2>
+        <p>パスワードやプログラミング記号などでよく用いられる記号類の入力法について確認しておきましょう。
+            Windowsの人はスマホのソフトウェアキーボードにある地球儀ボタンとパソコンの「全角/半角」ボタンは働きが異なるということに注意してください。
+            全く別のものとして使い方を覚えるといいでしょう。
+            以下の説明をよく読んでください。
+        </p>
+        <p>まずは、半角を入力するモードに切り替えてください。
+            以下の操作では全角、半角を切り替える操作は必要ありません。
+            キーに印字されている文字のうち、12時方向に書いてある文字を入力するには Shift キーを押しつつ、
+            入力したいキーを押します。
+        </p>
+
+        <div class="attention">
+            <h3>
+                <strong>パソコンがSurfaceの場合の注意</strong>
+            </h3>
+            <p>
+                Surfaceパソコンの場合で、キーボードカバーを利用している場合（ほとんどだと思いますが）、
+                記号類キーの刻印通りに入力できない場合があります。
+                下記ページをよく読んで設定してください。
+
+            </p>
+            <p>
+                <a href="https://www.oit.ac.jp/japanese/news/detail.php?i=6354">
+                    【情報センターからのお知らせ】必携端末としてSurfaceを利用される方へ | お知らせ情報 | 大阪工業大学
+                </a>
+            </p>
+        </div>
+
+        <h3>練習</h3>
+        <ol>
+            <li>
+                <code>2/3（半角）</code>
+                <input type="text" pattern="2/3" required>
+            </li>
+            <li>
+                <code>1+2=3（半角）</code>
+                <input type="text" pattern="1\+2=3" required>
+            </li>
+            <li>
+                <code>"Hello!"（半角）</code>
+                <input type="text" pattern='"Hello!"' required>
+            </li>
+            <li>
+                <code>(^o^)/（半角）</code>
+                <input type="text" pattern='\(\^o\^\)/' required>
+            </li>
+            <li>
+                <code>(@_@)???（半角）</code>
+                <input type="text" pattern='\(@_@\)\?\?\?' required>
+            </li>
+        </ol>
+
+    </main>
+    
     <footer>
-        <hr>
         
     </footer>
 
