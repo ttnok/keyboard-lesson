@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>キーボードの使い方</title>
     <style>
-        code {
+        pre, code {
             font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
         }
         :valid {
@@ -29,8 +29,7 @@
     </pre>
     </p>
     <p>
-        みなさんが見ているパソコン環境によってはほぼ同じに見えるかもしれませんが、
-        人間にとっては字体の違いでしかなくことが多いでしょう。    
+        確かに違って見えますが、字体の違いでしかないように思えます。    
     </p>
     <p>
         しかし、パソコン内部においては、全く異なるデータです。
@@ -40,15 +39,56 @@
 
     <h3>練習</h3>
 
+    <p>全角と半角のアルファベットを使い分けましょう。
+        Windowsの場合、「全角/半角」キーを適宜押して、全角、半角を切り替えてください。
+        Mac の場合は、スペースキーの右隣りの「かな」キーを押すと全角になり、右隣りの「英数」キーを押すと半角になります。
+    </p>
+
     <ol>
         <li>
-            <code>ABC（半角）</code>
-            <input type="text" pattern="ABC">
+            <code>abc（半角）</code>
+            <input type="text" pattern="abc">
         </li>
         <li>
-            <code>ＡＢＣ（全角）</code>
-            <input type="text" pattern="ＡＢＣ">
+            <code>ａｂｃ（全角）</code>
+            <input type="text" pattern="ａｂｃ">
         </li>
     </ol>
+
+    <h2>半角の小文字と大文字</h2>
+    <h3>練習</h3>
+    <ol>
+        <li>
+            <code>abc（半角小文字）</code>
+            <input type="text" pattern="abc">
+        </li>
+        <li>
+            <code>ABC（半角大文字）</code>
+            <input type="text" pattern="ABC">
+        </li>
+    </ol>
+
+
+    <h2>半角の記号いろいろ</h2>
+    <p>パスワードやプログラミング記号などでよく用いられる記号類の入力法について確認しておきましょう。
+        Windowsの人はスマホのソフトウェアキーボードにある地球儀ボタンとパソコンの「全角/半角」ボタンは働きが異なるということに注意してください。
+        全く別のものとして使い方を覚えるといいでしょう。
+    </p>
+    <p>まずは、半角を入力するモードに切り替えてください。
+        以下の操作では全角、半角を切り替える操作は必要ありません。
+    </p>
+
+    <h3>練習</h3>
+    <ol>
+        <li>
+            <code>2/3（半角）</code>
+            <input type="text" pattern="2/3">
+        </li>
+        <li>
+            <code>"Hello, Ellen!"（半角）</code>
+            <input type="text" pattern='"Hello, Ellen!"'>
+        </li>
+    </ol>
+
 </body>
 </html>
