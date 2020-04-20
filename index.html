@@ -25,14 +25,19 @@
             font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
         }
         :valid {
-            background-color: aliceblue;
+            background-color: hsl(178, 100%, 85%);
         }
         :invalid {
-            background-color: bisque;
+            background-color: hsl(42, 100%, 85%);
         }
         footer {
             margin-top: 80px;
         }
+        .attention {
+            background-color: beige;
+            padding: 5px 5px 20px 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -66,12 +71,12 @@
     <ol>
         <li>
             <code>abc（半角）</code>
-            <input type="text" pattern="abc">
+            <input type="text" pattern="abc" required>
             ← 入力してください（以下同様）
         </li>
         <li>
             <code>ａｂｃ（全角）</code>
-            <input type="text" pattern="ａｂｃ">
+            <input type="text" pattern="ａｂｃ" required>
         </li>
     </ol>
 
@@ -86,11 +91,11 @@
     <ol>
         <li>
             <code>abc（半角小文字）</code>
-            <input type="text" pattern="abc">
+            <input type="text" pattern="abc" required>
         </li>
         <li>
             <code>ABC（半角大文字）</code>
-            <input type="text" pattern="ABC">
+            <input type="text" pattern="ABC" required>
         </li>
     </ol>
 
@@ -107,27 +112,44 @@
         入力したいキーを押します。
     </p>
 
+    <div class="attention">
+        <h3>
+            <strong>パソコンがSurfaceの場合の注意</strong>
+        </h3>
+        <p>
+            Surfaceパソコンの場合で、キーボードカバーを利用している場合（ほとんどだと思いますが）、
+            記号類キーの刻印通りに入力できない場合があります。
+            下記ページをよく読んで設定してください。
+
+        </p>
+        <p>
+            <a href="https://www.oit.ac.jp/japanese/news/detail.php?i=6354">
+                【情報センターからのお知らせ】必携端末としてSurfaceを利用される方へ | お知らせ情報 | 大阪工業大学
+            </a>
+        </p>
+    </div>
+
     <h3>練習</h3>
     <ol>
         <li>
             <code>2/3（半角）</code>
-            <input type="text" pattern="2/3">
+            <input type="text" pattern="2/3" required>
         </li>
         <li>
             <code>1+2=3（半角）</code>
-            <input type="text" pattern="1\+2=3">
+            <input type="text" pattern="1\+2=3" required>
         </li>
         <li>
             <code>"Hello!"（半角）</code>
-            <input type="text" pattern='"Hello!"'>
+            <input type="text" pattern='"Hello!"' required>
         </li>
         <li>
             <code>(^o^)/（半角）</code>
-            <input type="text" pattern='\(\^o\^\)/'>
+            <input type="text" pattern='\(\^o\^\)/' required>
         </li>
         <li>
             <code>(@_@)???（半角）</code>
-            <input type="text" pattern='\(@_@\)\?\?\?'>
+            <input type="text" pattern='\(@_@\)\?\?\?' required>
         </li>
     </ol>
 
