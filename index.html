@@ -15,7 +15,7 @@
             background-blend-mode: multiply;
             background-size:contain;
             padding: 200px 100px 50px 50px;
-            text-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
         }
         header p {
             background-color: hsla(0, 0%, 100%, 0.603);
@@ -64,7 +64,7 @@
 </head>
 <body>
     <header>
-        <h1>パソコンによる各種文字の入力練習アプリ</h1>
+        <h1>パソコン文字入力練習アプリ</h1>
 
     </header>
 
@@ -110,6 +110,44 @@
             </li>
         </ol>
 
+        <p>
+            <code>ａｂｃ（全角）</code> は入力の仕方が難しいかもしれませんので、
+            方法を2つ紹介しておきます。
+            <dl>
+                <dt>
+                    変換候補の中から選ぶ
+                </dt>
+                <dd>
+                    全角モードでabcと入力して、スペースキーを何度か叩いていくうちに全角のａｂｃが候補に現れて来るはずです。
+                    はじめての場合、たくさん叩く必要があると思います。
+                </dd>
+                <dt>
+                    変換モード時のファンクションキー、ショートカットキーを用いる（Windows版）
+                </dt>
+                <dd>
+                    標準のかな漢字変換ツールの場合、
+                    全角モードでabcと入力して、[Ctrl]+[P]（[Ctrl]キーを押しつつ、[P]キーを押す）で全角アルファベットが入力できます。
+                    [Ctrl]+[P] の代わりに、[F9]キーを押しても全角アルファベットが入力できます。
+                    なお、[F9]キーはキーボードの最上列に配置されていると思いますが、
+                    そのまま押しても[F9]を押したことにならないことがあります。<br>
+                    Surfaceというパソコンでは、Fnと書いてあるキーを押してLEDが点灯した状態にしてから[F9]キーを押すと良いです。
+                    他のパソコンで[F9]がそのまま入力できない場合は、<strong>Fn を押しながら</strong>[F9]を押してください。<br>
+
+                    変換時のファンクションキー、ショートカットキーについては次のページも参考にすると良いでしょう。<br>
+                    <a href="https://forest.watch.impress.co.jp/docs/serial/win10tips/1113323.html">日本語変換の効率アップ！　ファンクションキーやショートカットキーの活用法</a>
+                </dd>
+                <dt>
+                    変換モード時のショートカットキーを用いる（Mac版）
+                </dt>
+                <dd>
+                    付属の標準ツールの場合、
+                    全角モードでabcと入力して、そのあと^L（[control]キーを押しつつ、[L]キーを押す）によって、
+                    全角アルファベットが入力できます。
+                </dd>
+            </dl>
+        </p>
+
+
         <h2>半角の小文字と大文字</h2>
 
         <p>
@@ -150,7 +188,6 @@
                 Surfaceパソコンの場合、
                 記号類キーの刻印通りに入力できない場合があります。
                 下記ページをよく読んで設定してください。
-
             </p>
             <p>
                 <a href="https://www.oit.ac.jp/japanese/news/detail.php?i=6354">
@@ -180,6 +217,38 @@
             <li>
                 <code>(@_@)???（半角）</code>
                 <input type="text" pattern='\(@_@\)\?\?\?' required>
+            </li>
+        </ol>
+
+        <h2>日本語の入力練習</h2>
+
+        <p>日本語の文章には半角の文字が混ざることがありますが、
+            ここでは全角文字のみの入力練習をします。
+        </p>
+
+        <h3>
+            練習
+        </h3>
+
+        <ol>
+            <li>
+                <code>
+                    りんご
+                </code>
+                <input type="text" pattern="りんご" required>
+            </li>
+            <li>
+                <code>
+                    ケール
+                </code>
+                <input type="text" pattern="ケール" required>
+            </li>
+            <li>
+                <code>
+                    烏瓜
+                </code>
+                <input type="text" pattern="烏瓜" required>
+                （からすうり、と読みます）
             </li>
         </ol>
 
