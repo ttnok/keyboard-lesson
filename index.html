@@ -10,8 +10,17 @@
             margin: 0;
         }
         header {
-            background-color: hsl(202, 93%, 82%);
-            padding: 100px 20px 50px;
+            background: linear-gradient(transparent, rgba(237, 206, 255, 0.854)) scroll,
+                url(./neko.jpg) no-repeat scroll 100% 100%;
+            background-blend-mode: multiply;
+            background-size:contain;
+            padding: 200px 100px 50px 50px;
+            text-shadow: 0px 0px 20px rgb(255, 255, 255);
+        }
+        header p {
+            background-color: hsla(0, 0%, 100%, 0.603);
+            padding: 5px;
+            width: 50%;
         }
         main {
             width: 80%;
@@ -23,6 +32,13 @@
         }
         p {
             text-indent: 1em;
+        }
+        li {
+            font-size: large;
+        }
+        input {
+            height: 30px;
+            font-size: 20pt;
         }
         pre, code {
             font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
@@ -50,13 +66,13 @@
     <header>
         <h1>パソコンによる各種文字の入力練習アプリ</h1>
 
+    </header>
+
+    <main>
         <p>
             このページではパソコンでの文字入力の仕方を説明します。
             スマホなどで開いている場合は、パソコンで開き直しましょう。
         </p>    
-    </header>
-
-    <main>
         <h2>全角と半角</h2>
         <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
         例えば、AとＡ、違いが分かりますか。
@@ -131,7 +147,7 @@
                 <strong>パソコンがSurfaceの場合の注意</strong>
             </h3>
             <p>
-                Surfaceパソコンの場合で、キーボードカバーを利用している場合（ほとんどだと思いますが）、
+                Surfaceパソコンの場合、
                 記号類キーの刻印通りに入力できない場合があります。
                 下記ページをよく読んで設定してください。
 
