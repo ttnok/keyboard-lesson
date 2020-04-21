@@ -3,4 +3,4 @@
 パソコンにあまり触ったことのないひとが、全角、半角の違いや、記号類入力について、慣れてもらうためのウェブアプリ
 
 GitHub Pages から公開中
-https://github.com/ttnok/keyboard
+https://ttnok.github.io/keyboard/
