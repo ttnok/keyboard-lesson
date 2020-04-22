@@ -30,6 +30,9 @@
             margin-top: 80px;
             border-bottom: 1px solid #333;
         }
+        h3 {
+            margin-top: 3rem;
+        }
         p {
             text-indent: 1rem;
         }
@@ -51,13 +54,15 @@
         }
         :valid {
             background-color: hsl(178, 100%, 85%);
+            border: 2px solid hsl(178, 100%, 60%);
         }
         :invalid {
             background-color: hsl(42, 100%, 85%);
+            border: 2px solid hsl(42, 100%, 60%);
         }
         kbd {
             padding: 5px;
-            border-width: 0;
+            border: 1px solid hsl(0, 0%, 63%);
             border-radius: 5px;
             background-color: hsl(0, 0%, 91%);
             color: black;
@@ -69,9 +74,23 @@
             background-color: hsl(0, 0%, 95%);
             padding: 100px 20px 50px;
         }
+        .exercise {
+            margin-top: 4rem;
+            display: inline-block;
+            transform: rotate(-8deg);
+            font-size: 2rem;
+            color: hsl(264, 29%, 49%);
+        }
+        .exercise::after {
+            content: " 🎶";
+            font-size: 2rem;
+        }
         .attention {
             background-color: beige;
             padding: 5px 5px 20px 20px;
+        }
+        .attention h3 {
+            margin-top: 1em;
         }
         .capslock {
             text-align: right;
@@ -108,7 +127,7 @@
             正しく使い分けられていないとログイン（使用開始許可の状態になり、自分の使用領域を与えられるまでの認証操作）ができません。
         </p>
 
-        <h3>練習</h3>
+        <h3 class="exercise">練習</h3>
 
         <p>全角と半角のアルファベットを使い分けましょう。
             Windowsの場合、<kbd>全角/半角</kbd>キーを適宜押して、全角、半角を切り替えてください。
@@ -184,7 +203,7 @@
             入力したいキーを押します。
         </p>
 
-        <h3>練習</h3>
+        <h3 class="exercise">練習</h3>
         <ol>
             <li>
                 <code>abc（半角小文字）</code>
@@ -234,7 +253,7 @@
             </p>
         </div>
 
-        <h3>練習</h3>
+        <h3 class="exercise">練習</h3>
         <ol>
             <li>
                 <code>2/3（半角）</code>
@@ -249,8 +268,8 @@
                 <input type="text" pattern='"Hello!"' required>
             </li>
             <li>
-                <code>(^o^)/（半角）</code>
-                <input type="text" pattern='\(\^o\^\)/' required>
+                <code>(=^x^=)（半角）</code>
+                <input type="text" pattern='\(=\^x\^=\)' required>
             </li>
             <li>
                 <code>(@_@)???（半角）</code>
@@ -271,9 +290,7 @@
             ここでは全角文字のみの入力練習をします。
         </p>
 
-        <h3>
-            練習
-        </h3>
+        <h3 class="exercise">練習</h3>
 
         <ol>
             <li>
