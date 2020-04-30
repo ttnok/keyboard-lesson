@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パソコンによる各種文字の入力</title>
+    <style>
+        body {
+            border: 0;
+            margin: 0;
+        }
+        header {
+            background: linear-gradient(transparent, rgba(206, 233, 255, 0.854)) scroll,
+                url(./neko.jpg) no-repeat scroll 100% 100%;
+            background-blend-mode: multiply;
+            background-size:contain;
+            padding: 200px 100px 50px 50px;
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+        }
+        header p {
+            background-color: hsla(0, 0%, 100%, 0.603);
+            padding: 5px;
+            width: 50%;
+        }
+        main {
+            width: 80%;
+            margin: auto;
+        }
+        h2 {
+            margin-top: 80px;
+            border-bottom: 1px solid #333;
+        }
+        h3 {
+            margin-top: 3rem;
+        }
+        p {
+            text-indent: 1rem;
+        }
+        li {
+            font-size: large;
+            margin-bottom: 1rem;
+        }
+        dd {
+            margin-bottom: 1rem;
+        }
+        input {
+            height: 2rem;
+            font-size: 1.5rem;
+            display: block;
+            width: 30rem;
+        }
+        textarea {
+            width: 100%;
+            height: 10rem;
+            font-size: 20pt;
+        }
+        pre, code {
+            font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
+        }
+        :valid {
+            background-color: hsl(178, 100%, 85%);
+            border: 2px solid hsl(178, 100%, 60%);
+        }
+        :invalid {
+            background-color: hsl(42, 100%, 85%);
+            border: 2px solid hsl(42, 100%, 60%);
+        }
+        kbd {
+            padding: 5px;
+            border: 1px solid hsl(0, 0%, 63%);
+            border-radius: 5px;
+            background-color: hsl(0, 0%, 91%);
+            color: black;
+            font-size: 1rem;
+        }
+        figure {
+            margin: 0 auto;
+            text-align: center;
+        }
+        figcaption::before {
+            content: "図： ";
+        }
+        footer {
+            margin-top: 80px;
+            height: 100px;
+            background-color: hsl(0, 0%, 95%);
+            padding: 100px 20px 50px;
+        }
+        .exercise {
+            margin-top: 4rem;
+            display: inline-block;
+            transform: rotate(-8deg);
+            font-size: 2rem;
+            color: hsl(265, 36%, 35%);
+        }
+        .exercise::after {
+            content: " 🎶";
+            font-size: 2rem;
+        }
+        .attention {
+            background-color: beige;
+            padding: 5px 5px 20px 20px;
+        }
+        .attention h3 {
+            margin-top: 1em;
+        }
+        .capslock {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>パソコン文字入力練習アプリ</h1>
+
+    </header>
+
+    <main>
+        <p>
+            このページではパソコンでの文字入力の仕方を説明します。
+            スマホなどで開いている場合は、パソコンで開き直しましょう。
+        </p>    
+        <h2>全角と半角</h2>
+        <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
+        例えば、<code>A</code>と<code>Ａ</code>、違いが分かりますか。
+        これならどうでしょう。
+        <pre>
+        ABC
+        ＡＢＣ
+        </pre>
+        </p>
+        <p>
+            確かに違って見えますが、字体の違いでしかないように思えます。    
+        </p>
+        <p>
+            しかし、パソコン内部においては、全く異なるデータです。
+            私たちがパソコンに指示する場合（プログラミングなど）には、気をつけて使い分けなければなりません。
+            また、パスワードなどもこういう区別をしますので、入力の際、
+            正しく使い分けられていないとログイン（使用開始許可の状態になり、自分の使用領域を与えられるまでの認証操作）ができません。
+        </p>
+
+        <h3 class="exercise">練習</h3>
+
+        <p>全角と半角のアルファベットを使い分けましょう。</p>
+        <p>
+            Windowsの場合、<kbd>全角/半角</kbd>キーを適宜押して、全角、半角を切り替えてください。
+            押すたびに半角・全角モードが交互に切り替わります。
+            現在のモードはパソコン画面（デスクトップ）右下のインジケータでわかります（下図）。
+            <kbd>全角/半角</kbd>キーを何度か押してみて、表示が切り替わるのを確認してください。
+            なお、そのインジケータを右クリックした時に現れるメニューからモードを選択することによって、モード変更することもできますが、
+            これも文字入力トラブルが起きた時の回避手段として覚えておくとよいでしょう。
+            <figure>
+                <img src="indicator-win.png" alt="Windows の入力インジケータ">
+                <figcaption>入力モード（Windows）</figcaption>
+            </figure>
+        </p>
+        <p>
+            Mac の場合（かつキーボードが日本語配列の場合）は、スペースキー（下の列の横長のキー）の右隣りにある <kbd>かな</kbd> キーを押すと全角になり、
+            左隣りにある <kbd>英数</kbd> キーを押すと半角になります。
+            Macで英字配列の場合は、<kbd>control（^）</kbd>+<kbd>shift（⬆️）</kbd>+<kbd>;</kbd>、<kbd>control</kbd>+<kbd>shift</kbd>+<kbd>J</kbd>で切り替えてください。
+            現在のモードは、パソコン画面（デスクトップ）右上の時刻が表示されているあたりに表示されます（下図参照）。
+            この表示をクリックすることによりモードを切り替えることもできます。
+            クリックすると各項目の右側にショートカットキーが表示されます。
+            操作に慣れたらこちらのショートカットキーも利用しましょう。
+            <figure>
+                <img src="indicator-mac.png" alt="Mac の入力インジケータ">
+                <figcaption>入力モード（Mac）</figcaption>
+            </figure>
+        </p>
+
+        <p>まずは、アルファベット1文字から。</p>
+        <ol>
+            <li>
+                <code>a</code>（半角）
+                <input type="text" pattern="a" required>
+                ↑ 入力してください。正しく入力できると青くなります（以下同様）
+            </li>
+            <li>
+                <code>ａ</code>（全角）
+                <input type="text" pattern="ａ" required>
+                （変換候補の中から適切なものを選んでください。よく分からなければ、下の「ａｂｃ（全角）の入力の仕方」を読んでください。）
+            </li>
+        </ol>
+
+        <h3 class="exercise">練習</h3>
+
+        <p>つづいて、複数文字の入力練習をしてみましょう。</p>
+
+        <ol>
+            <li>
+                <code>abc（半角）</code>
+                <input type="text" pattern="abc" required>
+            </li>
+            <li>
+                <code>ａｂｃ（全角）</code>
+                <input type="text" pattern="ａｂｃ" required>
+                （うまく行かなければ、以下の説明を読んでください）
+            </li>
+        </ol>
+
+        <p class="capslock">
+            ▶︎
+            <a href="#capslock">
+            Shift を押していないのに、大文字されてしまう場合
+            </a>
+        </p>
+
+        <h4><code>ａｂｃ（全角）</code>の入力の仕方</h4>
+        <p>
+            <code>ａｂｃ（全角）</code> は入力の仕方が難しいかもしれませんので、
+            方法を2つ紹介しておきます。
+            <dl>
+                <dt>
+                    1. 変換候補の中から選ぶ
+                </dt>
+                <dd>
+                    全角モードでabcと入力して、スペースキー（下の列の横長のキー）を何度か叩いていくうちに全角のａｂｃが候補に現れて来るはずです。
+                    はじめての場合、たくさん叩く必要があると思います。
+                </dd>
+                <dt>
+                    2(windows). 変換モード時のファンクションキー、ショートカットキーを用いる
+                </dt>
+                <dd>
+                    標準のかな漢字変換ツールの場合、
+                    全角モードでabcと入力して、<kbd>Ctrl</kbd>+<kbd>P</kbd>（<kbd>Ctrl</kbd>キーを押しつつ、<kbd>P</kbd>キーを押す）で全角アルファベットが入力できます。
+                    <kbd>Ctrl</kbd>+<kbd>P</kbd> の代わりに、<kbd>F9</kbd>キーを押しても全角アルファベットが入力できます。
+                    なお、<kbd>F9</kbd>キーはキーボードの最上列に配置されていると思いますが、
+                    そのまま押しても<kbd>F9</kbd>を押したことにならないことがあります。<br>
+                    Surfaceというパソコンでは、Fnと書いてあるキーを押してLEDが点灯した状態にしてから<kbd>F9</kbd>キーを押すと良いです。
+                    他のパソコンで<kbd>F9</kbd>がそのまま入力できない場合は、<strong><kbd>Fn</kbd> を押しながら</strong><kbd>F9</kbd>を押してください。
+                    <kbd>Fn</kbd> キーはキーボードの最下列に配置されているでしょう。<br>
+
+                    変換時のファンクションキー、ショートカットキーについては次のページも参考にすると良いでしょう。<br>
+                    <a href="https://forest.watch.impress.co.jp/docs/serial/win10tips/1113323.html">日本語変換の効率アップ！　ファンクションキーやショートカットキーの活用法</a>
+                </dd>
+                <dt>
+                    2(mac). 変換モード時のショートカットキーを用いる
+                </dt>
+                <dd>
+                    付属の標準ツールの場合、
+                    全角モードでabcと入力して、そのあと^L（<kbd>control</kbd>キーを押しつつ、<kbd>L</kbd>キーを押す）によって、
+                    全角アルファベットが入力できます。
+                </dd>
+            </dl>
+        </p>
+
+
+        <h2>半角の小文字と大文字</h2>
+
+        <p>
+            アルファベットの大文字を入力したいときは <kbd>Shift</kbd>キーを押しつつ、
+            入力したいキーを押します。
+        </p>
+
+        <h3 class="exercise">練習</h3>
+        <ol>
+            <li>
+                <code>abc（半角小文字）</code>
+                <input type="text" pattern="abc" required>
+            </li>
+            <li>
+                <code>ABC（半角大文字）</code>
+                <input type="text" pattern="ABC" required>
+            </li>
+        </ol>
+
+        <p class="capslock">
+            ▶︎
+            <a href="#capslock">
+            Shift を押していないのに、大文字が入力されてしまう場合
+            </a>
+        </p>
+
+        <h2>半角の記号いろいろ</h2>
+        <p>パスワードやプログラミング記号などでよく用いられる記号類の入力法について確認しておきましょう。
+            Windowsの人はスマホのソフトウェアキーボードにある地球儀🌐ボタンと
+            パソコンの<kbd>全角/半角</kbd>キーは働きが異なるということに注意してください。
+            全く別のものとして使い方を覚えるといいでしょう。
+            以下の説明をよく読んでください。
+        </p>
+        <p>まずは、半角を入力するモードに切り替えてください。
+            一度半角を入力するモードに切り替えれば、
+            以下の練習では途中で切り替える操作は必要ありません。
+            キーに印字されている文字のうち、12時方向に書いてある文字を入力するには <kbd>Shift</kbd> キーを押しつつ、
+            入力したいキーを押します。すでに知っていることと思いますが、
+            再確認しておきます。
+        </p>
+
+        <div class="attention">
+            <h3>
+                <strong>パソコンがSurfaceの場合の注意</strong>
+            </h3>
+            <p>
+                Surfaceパソコンの場合、
+                記号類キーの刻印通りに入力できない場合があります。
+                下記ページをよく読んで設定してください。
+            </p>
+            <p>
+                <a href="https://www.oit.ac.jp/japanese/news/detail.php?i=6354">
+                    【情報センターからのお知らせ】必携端末としてSurfaceを利用される方へ | お知らせ情報 | 大阪工業大学
+                </a>
+            </p>
+        </div>
+
+        <h3 class="exercise">練習</h3>
+        <ol>
+            <li>
+                <code>2/3（半角）</code>
+                <input type="text" pattern="2/3" required>
+            </li>
+            <li>
+                <code>1+2=3（半角）</code>
+                <input type="text" pattern="1\+2=3" required>
+            </li>
+            <li>
+                <code>"Hello!"（半角）</code>
+                <input type="text" pattern='"Hello!"' required>
+            </li>
+            <li>
+                <code>(=^x^=)（半角）</code>
+                <input type="text" pattern='\(=\^x\^=\)' required>
+            </li>
+            <li>
+                <code>(@_@)???（半角）</code>
+                <input type="text" pattern='\(@_@\)\?\?\?' required>
+            </li>
+        </ol>
+
+        <p class="capslock">
+            ▶︎
+            <a href="#capslock">
+            Shift を押していないのに、大文字が入力されてしまう場合
+            </a>
+        </p>
+
+        <h2>日本語の入力練習</h2>
+
+        <p>日本語の文章には半角の文字が混ざることがありますが、
+            ここでは全角文字のみの入力練習をします。
+        </p>
+
+        <h3 class="exercise">練習</h3>
+
+        <ol>
+            <li>
+                <code>
+                    りんご
+                </code>
+                <input type="text" pattern="りんご" required>
+            </li>
+            <li>
+                <code>
+                    ケール
+                </code>
+                <input type="text" pattern="ケール" required>
+            </li>
+            <li>
+                <code>
+                    烏瓜
+                </code>
+                <input type="text" pattern="烏瓜" required>
+                （からすうり、と読みます）
+            </li>
+            <li>
+                <code>
+                    「ザネリ、烏瓜ながしに行くの。」
+                </code>
+                <input type="text" pattern="「ザネリ、烏瓜ながしに行くの。」" required>
+                （全部、全角文字です）
+            </li>
+        </ol>
+
+        <p class="capslock">
+            ▶︎
+            <a href="#capslock">
+            Shift を押していないのに、大文字が入力されてしまう場合
+            </a>
+        </p>
+
+        <h2>自由練習</h2>
+        <p>自由に練習してください。
+            例えば、手元を見ずにabcを繰り返し入力してみるといいでしょう。
+            1分間、時間を測ってやってみてください。
+            何回打ち込めましたか？
+            初めのうちは、速さよりも正確さとリズムの良さを重視するのが上達の秘訣です。
+        </p>
+        
+        <textarea placeholder="abc"></textarea>
+
+        <p>
+            このような基本練習は、予習課題の方で紹介している
+            <a href="https://azby.fmworld.net/usage/lesson/keyboard/typing/">実践タッチタイピング</a>
+            で行うことができます。
+            パソコンのキーボードをほとんど使ったことがないという場合は、「基本コース」から始めるとよいでしょう。
+        </p>
+
+
+        <h2>入力時のトラブル</h2>
+        <h3 id="capslock">Shift キーを押していないのに大文字が入力されてしまう場合</h3>
+
+        <p>
+            これは操作ミスによって、そのようなモード（Caps Lock）に入ってしまったせいです。
+            Windows の場合、以下のページを参照してください。
+        </p>
+        <p>
+            <a href="https://121ware.com/support/pc/yougo/03_ei/ei080.htm">CapsLockキー(キャップスロックキー)</a>
+        </p>
+        <p>
+            なお、このモード入っているかどうかは、ノートパソコンの場合、
+            本体の隅の方（右上だったり、右下だったりしますが）のLEDでわかるようになっています。
+            各自のパソコンはどういう表示になっているのか確かめておくとよいでしょう。
+        </p>
+        <p>
+            Mac の場合、左下隅のキーが点灯していませんか？
+            点灯している場合は、大文字入力のモード（Caps Lock）に入っています。
+            一度押してください。
+        </p>
+
+        <h3>すでに入力した部分に追加で入力する際、文字を割り込ませることができない、上書きされてしまう</h3>
+
+        <p>
+            これも操作ミスで、そういうモード（上書きモード）に入ってしまいました。
+            エンターキー（<kbd>↩︎</kbd>）の右上あたりに
+            <kbd>Ins</kbd>あるいは<kbd>Insert</kbd>と書かれたキーはありませんか？
+            そのキーを押すと挿入モードと上書きモードが切り替わります。
+            押してみてください。
+        </p>
+
+        <h3>その他（カタカナばかり入力されてしまうなど）</h3>
+
+        <p>
+            その他、いろいろな未知の状態に出会うかもしれませんが、そういう時はウェブで検索してみてください。
+            パソコンメーカーが用意しているサイトをいくつか紹介しておきます。
+
+            <ul>
+                <li>NEC LAVIE サポート
+                    <a href="http://121ware.com/qasearch/1007/app/servlet/searchtrouble">http://121ware.com/qasearch/1007/app/servlet/searchtrouble</a>
+                </li>
+                <li>富士通 FMV サポート
+                    <a href="https://azby.fmworld.net/usage/lesson/keyboard/">https://azby.fmworld.net/usage/lesson/keyboard/</a>
+                </li>
+            </ul>
+
+            手持ちのパソコンが他のメーカーや機種でもあっても、上記のサイトで検索すれば、有用な情報が得られるでしょう。
+            Mac の場合は、<a href="https://support.apple.com/ja-jp">Apple のサポート</a> などで検索してください。
+
+        </p>
+
+        <p>
+            上で紹介したサイトや Google 検索などでも解決法が分からないことはあるでしょう。
+            授業時などに質問してください。
+        </p>
+
+        <h2>初回授業に向けて</h2>
+        <p>
+            以上の練習のうち、できなかったところもあるかもしれません。
+            その部分については、メモをしておき、初回授業時などに質問するとよいでしょう。
+        </p>
+    </main>
+    
+    <footer>
+        
+    </footer>
+
+</body>
+</html>
