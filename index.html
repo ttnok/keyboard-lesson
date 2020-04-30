@@ -46,7 +46,6 @@
         input {
             height: 2rem;
             font-size: 1.5rem;
-            display: block;
             width: 30rem;
         }
         textarea {
@@ -64,6 +63,16 @@
         :invalid {
             background-color: hsl(42, 100%, 85%);
             border: 2px solid hsl(42, 100%, 60%);
+        }
+        input + span {
+            position: relative;
+        }
+        input:valid + span::before {
+            content: "✅";
+            font-size: 20pt;
+        }
+        input:invalid + span::before {
+            content: "❌";
         }
         kbd {
             padding: 5px;
@@ -173,12 +182,18 @@
         <ol>
             <li>
                 <code>a</code>（半角）
-                <input type="text" pattern="a" required>
+                <div>
+                    <input type="text" pattern="a" required>
+                    <span></span>
+                </div>
                 ↑ 入力してください。正しく入力できると青くなります（以下同様）
             </li>
             <li>
                 <code>ａ</code>（全角）
-                <input type="text" pattern="ａ" required>
+                <div>
+                    <input type="text" pattern="ａ" required>
+                    <span></span>
+                </div>
                 （変換候補の中から適切なものを選んでください。よく分からなければ、下の「ａｂｃ（全角）の入力の仕方」を読んでください。）
             </li>
         </ol>
@@ -190,11 +205,17 @@
         <ol>
             <li>
                 <code>abc（半角）</code>
-                <input type="text" pattern="abc" required>
+                <div>
+                    <input type="text" pattern="abc" required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>ａｂｃ（全角）</code>
-                <input type="text" pattern="ａｂｃ" required>
+                <div>
+                    <input type="text" pattern="ａｂｃ" required>
+                    <span></span>
+                </div>
                 （うまく行かなければ、以下の説明を読んでください）
             </li>
         </ol>
@@ -257,11 +278,17 @@
         <ol>
             <li>
                 <code>abc（半角小文字）</code>
-                <input type="text" pattern="abc" required>
+                <div>
+                    <input type="text" pattern="abc" required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>ABC（半角大文字）</code>
-                <input type="text" pattern="ABC" required>
+                <div>
+                    <input type="text" pattern="ABC" required>
+                    <span></span>
+                </div>
             </li>
         </ol>
 
@@ -307,23 +334,38 @@
         <ol>
             <li>
                 <code>2/3（半角）</code>
-                <input type="text" pattern="2/3" required>
+                <div>
+                    <input type="text" pattern="2/3" required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>1+2=3（半角）</code>
-                <input type="text" pattern="1\+2=3" required>
+                <div>
+                    <input type="text" pattern="1\+2=3" required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>"Hello!"（半角）</code>
-                <input type="text" pattern='"Hello!"' required>
+                <div>
+                    <input type="text" pattern='"Hello!"' required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>(=^x^=)（半角）</code>
-                <input type="text" pattern='\(=\^x\^=\)' required>
+                <div>
+                    <input type="text" pattern='\(=\^x\^=\)' required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>(@_@)???（半角）</code>
-                <input type="text" pattern='\(@_@\)\?\?\?' required>
+                <div>
+                    <input type="text" pattern='\(@_@\)\?\?\?' required>
+                    <span></span>
+                </div>
             </li>
         </ol>
 
@@ -347,26 +389,38 @@
                 <code>
                     りんご
                 </code>
-                <input type="text" pattern="りんご" required>
+                <div>
+                    <input type="text" pattern="りんご" required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>
                     ケール
                 </code>
-                <input type="text" pattern="ケール" required>
+                <div>
+                    <input type="text" pattern="ケール" required>
+                    <span></span>
+                </div>
             </li>
             <li>
                 <code>
                     烏瓜
                 </code>
-                <input type="text" pattern="烏瓜" required>
+                <div>
+                    <input type="text" pattern="烏瓜" required>
+                    <span></span>
+                </div>
                 （からすうり、と読みます）
             </li>
             <li>
                 <code>
                     「ザネリ、烏瓜ながしに行くの。」
                 </code>
-                <input type="text" pattern="「ザネリ、烏瓜ながしに行くの。」" required>
+                <div>
+                    <input type="text" pattern="「ザネリ、烏瓜ながしに行くの。」" required>
+                    <span></span>
+                </div>
                 （全部、全角文字です）
             </li>
         </ol>
