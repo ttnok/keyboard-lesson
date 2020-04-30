@@ -49,6 +49,11 @@
             display: block;
             width: 30rem;
         }
+        textarea {
+            width: 100%;
+            height: 10rem;
+            font-size: 20pt;
+        }
         pre, code {
             font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
         }
@@ -67,6 +72,13 @@
             background-color: hsl(0, 0%, 91%);
             color: black;
             font-size: 1rem;
+        }
+        figure {
+            margin: 0 auto;
+            text-align: center;
+        }
+        figcaption::before {
+            content: "図： ";
         }
         footer {
             margin-top: 80px;
@@ -110,7 +122,7 @@
         </p>    
         <h2>全角と半角</h2>
         <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
-        例えば、AとＡ、違いが分かりますか。
+        例えば、<code>A</code>と<code>Ａ</code>、違いが分かりますか。
         これならどうでしょう。
         <pre>
         ABC
@@ -129,19 +141,55 @@
 
         <h3 class="exercise">練習</h3>
 
-        <p>全角と半角のアルファベットを使い分けましょう。
+        <p>全角と半角のアルファベットを使い分けましょう。</p>
+        <p>
             Windowsの場合、<kbd>全角/半角</kbd>キーを適宜押して、全角、半角を切り替えてください。
-            押すたびにモードが切り替わります。
+            押すたびに半角・全角モードが交互に切り替わります。
+            現在のモードはパソコン画面（デスクトップ）右下のインジケータでわかります（下図）。
+            <kbd>全角/半角</kbd>キーを何度か押してみて、表示が切り替わるのを確認してください。
+            なお、そのインジケータを右クリックした時に現れるメニューからモードを選択することによって、モード変更することもできますが、
+            これも文字入力トラブルが起きた時の回避手段として覚えておくとよいでしょう。
+            <figure>
+                <img src="indicator-win.png" alt="Windows の入力インジケータ">
+                <figcaption>入力モード（Windows）</figcaption>
+            </figure>
+        </p>
+        <p>
             Mac の場合（かつキーボードが日本語配列の場合）は、スペースキー（下の列の横長のキー）の右隣りにある <kbd>かな</kbd> キーを押すと全角になり、
             左隣りにある <kbd>英数</kbd> キーを押すと半角になります。
             Macで英字配列の場合は、<kbd>control（^）</kbd>+<kbd>shift（⬆️）</kbd>+<kbd>;</kbd>、<kbd>control</kbd>+<kbd>shift</kbd>+<kbd>J</kbd>で切り替えてください。
+            現在のモードは、パソコン画面（デスクトップ）右上の時刻が表示されているあたりに表示されます（下図参照）。
+            この表示をクリックすることによりモードを切り替えることもできます。
+            クリックすると各項目の右側にショートカットキーが表示されます。
+            操作に慣れたらこちらのショートカットキーも利用しましょう。
+            <figure>
+                <img src="indicator-mac.png" alt="Mac の入力インジケータ">
+                <figcaption>入力モード（Mac）</figcaption>
+            </figure>
         </p>
+
+        <p>まずは、アルファベット1文字から。</p>
+        <ol>
+            <li>
+                <code>a</code>（半角）
+                <input type="text" pattern="a" required>
+                ↑ 入力してください。正しく入力できると青くなります（以下同様）
+            </li>
+            <li>
+                <code>ａ</code>（全角）
+                <input type="text" pattern="ａ" required>
+                （変換候補の中から適切なものを選んでください。よく分からなければ、下の「ａｂｃ（全角）の入力の仕方」を読んでください。）
+            </li>
+        </ol>
+
+        <h3 class="exercise">練習</h3>
+
+        <p>つづいて、複数文字の入力練習をしてみましょう。</p>
 
         <ol>
             <li>
                 <code>abc（半角）</code>
                 <input type="text" pattern="abc" required>
-                ↑ 入力してください。正しく入力できると青くなります（以下同様）
             </li>
             <li>
                 <code>ａｂｃ（全角）</code>
@@ -170,7 +218,7 @@
                     はじめての場合、たくさん叩く必要があると思います。
                 </dd>
                 <dt>
-                    2-win. 変換モード時のファンクションキー、ショートカットキーを用いる（Windows版）
+                    2(windows). 変換モード時のファンクションキー、ショートカットキーを用いる
                 </dt>
                 <dd>
                     標準のかな漢字変換ツールの場合、
@@ -179,13 +227,14 @@
                     なお、<kbd>F9</kbd>キーはキーボードの最上列に配置されていると思いますが、
                     そのまま押しても<kbd>F9</kbd>を押したことにならないことがあります。<br>
                     Surfaceというパソコンでは、Fnと書いてあるキーを押してLEDが点灯した状態にしてから<kbd>F9</kbd>キーを押すと良いです。
-                    他のパソコンで<kbd>F9</kbd>がそのまま入力できない場合は、<strong><kbd>Fn</kbd> を押しながら</strong><kbd>F9</kbd>を押してください。<br>
+                    他のパソコンで<kbd>F9</kbd>がそのまま入力できない場合は、<strong><kbd>Fn</kbd> を押しながら</strong><kbd>F9</kbd>を押してください。
+                    <kbd>Fn</kbd> キーはキーボードの最下列に配置されているでしょう。<br>
 
                     変換時のファンクションキー、ショートカットキーについては次のページも参考にすると良いでしょう。<br>
                     <a href="https://forest.watch.impress.co.jp/docs/serial/win10tips/1113323.html">日本語変換の効率アップ！　ファンクションキーやショートカットキーの活用法</a>
                 </dd>
                 <dt>
-                    2-mac. 変換モード時のショートカットキーを用いる（Mac版）
+                    2(mac). 変換モード時のショートカットキーを用いる
                 </dt>
                 <dd>
                     付属の標準ツールの場合、
@@ -327,6 +376,24 @@
             Shift を押していないのに、大文字が入力されてしまう場合
             </a>
         </p>
+
+        <h2>自由練習</h2>
+        <p>自由に練習してください。
+            例えば、手元を見ずにabcを繰り返し入力してみるといいでしょう。
+            1分間、時間を測ってやってみてください。
+            何回打ち込めましたか？
+            初めのうちは、速さよりも正確さとリズムの良さを重視するのが上達の秘訣です。
+        </p>
+        
+        <textarea placeholder="abc"></textarea>
+
+        <p>
+            このような基本練習は、予習課題の方で紹介している
+            <a href="https://azby.fmworld.net/usage/lesson/keyboard/typing/">実践タッチタイピング</a>
+            で行うことができます。
+            パソコンのキーボードをほとんど使ったことがないという場合は、「基本コース」から始めるとよいでしょう。
+        </p>
+
 
         <h2>入力時のトラブル</h2>
         <h3 id="capslock">Shift キーを押していないのに大文字が入力されてしまう場合</h3>
