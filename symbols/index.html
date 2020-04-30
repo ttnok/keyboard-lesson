@@ -1,1 +1,82 @@
-dummy
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記号類の入力練習</title>
+    <style>
+        #table {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cell {
+            position: relative;
+            margin: 0;
+        }
+        .cell > span {
+            position: absolute;
+            font-family: consolas;
+            font-size: 2rem;
+            color: hsl(0, 0%, 0%);
+            padding: 10px;
+            margin: 0;
+            background-color: hsla(0, 0%, 94%, 0.164);
+            width: 3rem;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        .cell > input {
+            position: relative;
+            border: 1px solid hsl(20, 30%, 90%);
+            font-family: consolas;
+            padding: 10px;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            z-index: 10;
+            font-size: 2rem;
+            text-align: center;
+            opacity: 80%;
+        }
+        .cell > input:required {
+            background-color: hsl(22, 100%, 90%);
+        }
+        .cell > input:invalid {
+            background-color: hsl(22, 100%, 90%);
+        }
+        .cell > input:valid {
+            background-color: hsl(210, 100%, 87%);
+        }
+    </style>
+</head>
+<body>
+    
+<div id="table"></div>
+
+<script>
+    const chars = [..."!\"#$%&'()-=^~\|@`;:+*[]{},.<>/?_"];
+    //const chars = [..."!\"#"];
+    const table = document.querySelector('#table');
+
+    const dict = [..."^$|"];
+
+    for (let char of chars) {
+        let cell = document.createElement('div');
+        let span = document.createElement('span');
+        let input = document.createElement('input');
+        span.textContent = char;
+        input.setAttribute('pattern', dict.includes(char) ? '\\'+char : char);
+        input.type = 'text';
+        input.required = true;
+        cell.appendChild(span);
+        cell.appendChild(input);
+        cell.classList.add('cell');
+        table.appendChild(cell);
+    }
+</script>
+</body>
+</html>
