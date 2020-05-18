@@ -6,6 +6,10 @@
     <title>MNIST</title>
 
     <style>
+        main {
+            margin: 0 auto;
+            width: max(80%, 500px);
+        }
         #handwriting {
             padding: 30px;
             background-color: rgb(255, 240, 212);
@@ -40,6 +44,7 @@
     </style>
 </head>
 <body>
+<main>
     <h1>手書き文字画像作成アプリ</h1>
 
     <h2>手書き入力領域</h2>
@@ -54,11 +59,16 @@
     </div>
 
     <h2>生成された画像</h2>
+    <p>書き損じはダブルクリックで削除できます。</p>
     <div id="myfigures">
     </div>
-
+</main>
 <script>
-    const canvas = document.querySelector('canvas');
+    const $ = (selector) => {
+        return document.querySelector(selector);
+    };
+
+    const canvas = $('canvas');
     const context = canvas.getContext('2d');
 
     const init = () => {
@@ -70,7 +80,6 @@
         let prev = {x: 0, y: 0};
 
         const position = e => {
-            console.log(`${e.pageX} - ${bb.left}, ${e.pageY} - ${bb.top}`)
             return [e.pageX - bb.left, e.pageY - bb.top];
         };
 
@@ -85,7 +94,7 @@
             c.lineCap = "round";
             c.lineJoin = "round";
             c.shadowColor = "rgb(0, 0, 0)";
-            c.shadowBlur = 8;
+            c.shadowBlur = 5;
             c.strokeStyle = "rgb(0, 0, 0)";
             c.stroke();
             [prev.x, prev.y] = [x, y];
@@ -110,16 +119,18 @@
                 const img = document.createElement('img');
                 const url = URL.createObjectURL(blob);
 
-                img.addEventListener('load', e => {
-                    //URL.revokeObjectURL(url);
-                });
                 img.src = url;
                 img.classList.add('figure');
-                document.querySelector('#myfigures').appendChild(img);
+                $('#myfigures').appendChild(img);
             })
 
             // 手書き領域クリア
             context.clearRect(0, 0, canvas.width, canvas.height)
+        });
+
+        // 書き損じをダブルクリックで削除
+        $('#myfigures').addEventListener('dblclick', e => {
+            e.target.remove();
         });
     };
 
