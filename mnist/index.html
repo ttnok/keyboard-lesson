@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST</title>
+
+    <style>
+        canvas {
+            background-color: rgb(227, 227, 227);
+        }
+        button {
+            display: block;
+            margin: 0;
+            border: 0;
+
+            width: 200px;
+            height: 50px;
+        }
+        #download {
+            background-color: rgb(151, 217, 243);
+        }
+        #myfigures {
+            margin-top: 10px;
+        }
+        .figure {
+            margin: 0;
+            margin-top: 5px;
+            margin-right: 5px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>数字認識アプリ</h1>
+
+    <div>
+        <p>ダブルクリックで消去</p>
+        <canvas width="200" height="200"></canvas>
+        <button id="download">ダウンロード</button>
+    </div>
+    <div id="myfigures">
+    </div>
+
+<script>
+    const canvas = document.querySelector('canvas');
+    const context = canvas.getContext('2d');
+    const textarea = document.querySelector('textarea');
+
+    const downloader = document.querySelector('#download');
+
+    const init = () => {
+        const bb = canvas.getBoundingClientRect();
+
+        let drawing = false;
+        let prev = {x: 0, y: 0}, curr = {x: 0, y: 0};
+
+        const position = e => {
+            return [e.clientX - bb.left, e.clientY - bb.top];
+        };
+
+        canvas.addEventListener('mousemove', e => {
+            [x, y] = position(e);
+            const c = context;
+
+            if (drawing) {
+                c.lineTo(x, y);
+                c.strokeStyle = "black";
+                c.stroke();
+                [prev.x, prev.y] = [x, y];
+            }
+        });
+        canvas.addEventListener('mousedown', e => {
+            [x, y] = [prev.x, prev.y] = position(e);
+            drawing = true;
+            context.beginPath();
+            context.moveTo(x, y);
+        });
+        canvas.addEventListener('mouseup', e => {
+            drawing = false;
+        });
+        canvas.addEventListener('mouseleave', e => {
+            drawing = false;
+        });
+
+        canvas.addEventListener('dblclick', e => {
+            context.clearRect(0, 0, canvas.width, canvas.height)
+        });
+
+        // cf. HTMLCanvasElement.toBlob() -- MDN
+        // https://developer.mozilla.org/ja/docs/Web/API/HTMLCanvasElement/toBlob
+        downloader.addEventListener('click', e => {
+            canvas.toBlob(blob => {
+                const img = document.createElement('img');
+                const url = URL.createObjectURL(blob);
+
+                img.addEventListener('load', e => {
+                    //URL.revokeObjectURL(url);
+                });
+                img.src = url;
+                img.classList.add('figure');
+                document.querySelector('#myfigures').appendChild(img);
+            })
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
