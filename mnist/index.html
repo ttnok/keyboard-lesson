@@ -6,8 +6,16 @@
     <title>MNIST</title>
 
     <style>
+        #handwriting {
+            padding: 30px;
+            background-color: rgb(255, 240, 212);
+            text-align: center;
+        }
         canvas {
-            background-color: rgb(227, 227, 227);
+            display: inline;
+            margin: 0 auto;
+            border: 0;
+            background-color: white;
         }
         button {
             display: block;
@@ -32,51 +40,58 @@
     </style>
 </head>
 <body>
-    <h1>数字認識アプリ</h1>
+    <h1>手書き文字画像作成アプリ</h1>
 
-    <div>
-        <p>ダブルクリックで消去</p>
+    <h2>手書き入力領域</h2>
+    <p>
+        以下中央の色の着いていない正方形領域に、
+        トラックパッドやマウスなどでドラッグして手書きで文字を描いてください。
+        ダブルクリックすると、画像ファイルが生成されます。
+    </p>
+
+    <div id="handwriting">
         <canvas width="200" height="200"></canvas>
-        <button id="download">ダウンロード</button>
     </div>
+
+    <h2>生成された画像</h2>
     <div id="myfigures">
     </div>
 
 <script>
     const canvas = document.querySelector('canvas');
     const context = canvas.getContext('2d');
-    const textarea = document.querySelector('textarea');
-
-    const downloader = document.querySelector('#download');
 
     const init = () => {
+        "use strict";
+
         const bb = canvas.getBoundingClientRect();
 
         let drawing = false;
-        let prev = {x: 0, y: 0}, curr = {x: 0, y: 0};
+        let prev = {x: 0, y: 0};
 
         const position = e => {
-            return [e.clientX - bb.left, e.clientY - bb.top];
+            console.log(`${e.pageX} - ${bb.left}, ${e.pageY} - ${bb.top}`)
+            return [e.pageX - bb.left, e.pageY - bb.top];
         };
 
         canvas.addEventListener('mousemove', e => {
-            [x, y] = position(e);
-            const c = context;
+            if (!drawing) return;
 
-            if (drawing) {
-                c.lineTo(x, y);
-                c.lineWidth = 10;
-                c.lineCap = "round";
-                c.lineJoin = "round";
-                c.shadowColor = "rgb(0, 0, 0)";
-                c.shadowBlur = 3;
-                c.strokeStyle = "rgb(0, 0, 0)";
-                c.stroke();
-                [prev.x, prev.y] = [x, y];
-            }
+            const c = context;
+            let [x, y] = position(e);
+
+            c.lineTo(x, y);
+            c.lineWidth = 5;
+            c.lineCap = "round";
+            c.lineJoin = "round";
+            c.shadowColor = "rgb(0, 0, 0)";
+            c.shadowBlur = 8;
+            c.strokeStyle = "rgb(0, 0, 0)";
+            c.stroke();
+            [prev.x, prev.y] = [x, y];
         });
         canvas.addEventListener('mousedown', e => {
-            [x, y] = [prev.x, prev.y] = position(e);
+            let [x, y] = [prev.x, prev.y] = position(e);
             drawing = true;
             context.beginPath();
             context.moveTo(x, y);
@@ -89,12 +104,8 @@
         });
 
         canvas.addEventListener('dblclick', e => {
-            context.clearRect(0, 0, canvas.width, canvas.height)
-        });
-
-        // cf. HTMLCanvasElement.toBlob() -- MDN
-        // https://developer.mozilla.org/ja/docs/Web/API/HTMLCanvasElement/toBlob
-        downloader.addEventListener('click', e => {
+            // cf. HTMLCanvasElement.toBlob() -- MDN
+            // https://developer.mozilla.org/ja/docs/Web/API/HTMLCanvasElement/toBlob
             canvas.toBlob(blob => {
                 const img = document.createElement('img');
                 const url = URL.createObjectURL(blob);
@@ -106,6 +117,9 @@
                 img.classList.add('figure');
                 document.querySelector('#myfigures').appendChild(img);
             })
+
+            // 手書き領域クリア
+            context.clearRect(0, 0, canvas.width, canvas.height)
         });
     };
 
