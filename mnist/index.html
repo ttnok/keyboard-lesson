@@ -65,7 +65,8 @@
 
             if (drawing) {
                 c.lineTo(x, y);
-                c.strokeStyle = "black";
+                c.lineWidth = 10;
+                c.strokeStyle = "rgb(0, 0, 0)";
                 c.stroke();
                 [prev.x, prev.y] = [x, y];
             }
