@@ -40,6 +40,8 @@
             margin-top: 5px;
             margin-right: 5px;
             border: 1px solid gray;
+            width: 50px;
+            height: 50px;
         }
     </style>
 </head>
@@ -51,7 +53,7 @@
     <p>
         以下中央の色の着いていない正方形領域に、
         トラックパッドやマウスなどでドラッグして手書きで文字を描いてください。
-        ダブルクリックすると、画像ファイルが生成されます。
+        カーソルが色の着いていない領域から出ると、画像ファイルが生成されます。
     </p>
 
     <div id="handwriting">
@@ -110,6 +112,17 @@
         });
         canvas.addEventListener('mouseleave', e => {
             drawing = false;
+            canvas.toBlob(blob => {
+                const img = document.createElement('img');
+                const url = URL.createObjectURL(blob);
+
+                img.src = url;
+                img.classList.add('figure');
+                $('#myfigures').appendChild(img);
+            })
+
+            // 手書き領域クリア
+            context.clearRect(0, 0, canvas.width, canvas.height)
         });
 
         canvas.addEventListener('dblclick', e => {
