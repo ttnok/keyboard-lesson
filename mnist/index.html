@@ -66,6 +66,8 @@
             if (drawing) {
                 c.lineTo(x, y);
                 c.lineWidth = 10;
+                c.lineCap = "round";
+                c.lineJoin = "round";
                 c.strokeStyle = "rgb(0, 0, 0)";
                 c.stroke();
                 [prev.x, prev.y] = [x, y];
