@@ -1,0 +1,145 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    border: 0;
+    margin: 0;
+}
+header {
+    height: 600px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.854)) scroll,
+        url(./neko.jpg) no-repeat scroll 100% 100%;
+    background-size: cover;
+    position: relative;
+}
+header h1 {
+    opacity: 100%;
+    padding: 5px;
+    position: relative;
+    color: white;
+    top: 400px;
+    left: 50px;
+    font-size: 40pt;
+}
+main {
+    width: 80%;
+    margin: auto;
+}
+h2 {
+    margin-top: 80px;
+    border-bottom: 2px solid #333;
+    font-size: 25pt;
+}
+h3 {
+    margin-top: 3rem;
+    border-bottom: 1px dashed #333;
+}
+h3::before {
+    content: "！";
+    color: rgb(216, 216, 5);
+    font-size: 30pt;
+}
+p {
+    text-indent: 1rem;
+}
+li {
+    font-size: large;
+    margin-bottom: 1rem;
+}
+dd {
+    margin-bottom: 1rem;
+}
+input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 30rem;
+}
+textarea {
+    width: 100%;
+    height: 10rem;
+    font-size: 20pt;
+}
+pre, code {
+    font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
+}
+:valid {
+    background-color: hsl(200, 100%, 94%);
+    border: 2px solid hsl(200, 100%, 60%);
+}
+:invalid {
+    background-color: hsl(0, 0%, 90%);
+    border: 2px solid hsl(0, 0%, 82%);
+}
+input + span {
+    position: relative;
+}
+input:valid + span::before {
+    content: "✅";
+    font-size: 20pt;
+}
+input:invalid + span::before {
+    content: "❌";
+}
+kbd {
+    padding: 5px;
+    border: 1px solid hsl(0, 0%, 63%);
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 91%);
+    color: black;
+    font-size: 1rem;
+}
+figure {
+    margin: 0 auto;
+    text-align: center;
+}
+figcaption::before {
+    content: "図： ";
+}
+dd {
+    margin-top: 0.3rem;
+}
+footer {
+    margin-top: 80px;
+    height: 100px;
+    background-color: hsla(204, 100%, 68%, 0.454);
+    padding: 100px 20px 50px;
+}
+.exercise {
+    margin-top: 4rem;
+    display: inline-block;
+    border-bottom-style: none;
+    font-size: 2rem;
+}
+.exercise::before {
+    content: "";
+}
+.exercise::after {
+    content: " 🎶";
+    font-size: 2rem;
+}
+.attention {
+    background-color: beige;
+    padding: 5px 5px 20px 20px;
+}
+.attention h3 {
+    margin-top: 1em;
+}
+.capslock {
+    text-align: right;
+}
+
+
+
+aside {
+    width: 40%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+aside > p {
+    margin: .5rem;
+}

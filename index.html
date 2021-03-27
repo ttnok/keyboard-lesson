@@ -4,139 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>パソコンによる各種文字の入力</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            border: 0;
-            margin: 0;
-        }
-        header {
-            background: linear-gradient(transparent, rgba(206, 233, 255, 0.854)) scroll,
-                url(./neko.jpg) no-repeat scroll 100% 100%;
-            background-blend-mode: multiply;
-            background-size:contain;
-            padding: 200px 100px 50px 50px;
-            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
-        }
-        header p {
-            background-color: hsla(0, 0%, 100%, 0.603);
-            padding: 5px;
-            width: 50%;
-        }
-        main {
-            width: 80%;
-            margin: auto;
-        }
-        h2 {
-            margin-top: 80px;
-            border-bottom: 1px solid #333;
-        }
-        h3 {
-            margin-top: 3rem;
-        }
-        p {
-            text-indent: 1rem;
-        }
-        li {
-            font-size: large;
-            margin-bottom: 1rem;
-        }
-        dd {
-            margin-bottom: 1rem;
-        }
-        input {
-            height: 2rem;
-            font-size: 1.5rem;
-            width: 30rem;
-        }
-        textarea {
-            width: 100%;
-            height: 10rem;
-            font-size: 20pt;
-        }
-        pre, code {
-            font-family: 'MS Gothic', 'Hiragino Kaku Gothic Pro';
-        }
-        :valid {
-            background-color: hsl(178, 100%, 85%);
-            border: 2px solid hsl(178, 100%, 60%);
-        }
-        :invalid {
-            background-color: hsl(42, 100%, 85%);
-            border: 2px solid hsl(42, 100%, 60%);
-        }
-        input + span {
-            position: relative;
-        }
-        input:valid + span::before {
-            content: "✅";
-            font-size: 20pt;
-        }
-        input:invalid + span::before {
-            content: "❌";
-        }
-        kbd {
-            padding: 5px;
-            border: 1px solid hsl(0, 0%, 63%);
-            border-radius: 5px;
-            background-color: hsl(0, 0%, 91%);
-            color: black;
-            font-size: 1rem;
-        }
-        figure {
-            margin: 0 auto;
-            text-align: center;
-        }
-        figcaption::before {
-            content: "図： ";
-        }
-        dd {
-            margin-top: 0.3rem;
-        }
-        footer {
-            margin-top: 80px;
-            height: 100px;
-            background-color: hsl(0, 0%, 95%);
-            padding: 100px 20px 50px;
-        }
-        .exercise {
-            margin-top: 4rem;
-            display: inline-block;
-            transform: rotate(-8deg);
-            font-size: 2rem;
-            color: hsl(265, 36%, 35%);
-        }
-        .exercise::after {
-            content: " 🎶";
-            font-size: 2rem;
-        }
-        .attention {
-            background-color: beige;
-            padding: 5px 5px 20px 20px;
-        }
-        .attention h3 {
-            margin-top: 1em;
-        }
-        .capslock {
-            text-align: right;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>パソコン文字入力練習アプリ</h1>
+        <h1>パソコンキーボード練習</h1>
 
     </header>
 
     <main>
         <p>
-            このページではパソコンでの文字入力の仕方を説明します。
+            このページではパソコンでの文字入力ができるかどうかを確認します。
+            できない場合も、説明を読んでできるようになっておいてください。
             スマホなどで開いている場合は、パソコンで開き直しましょう。
         </p>    
+
         <h2>全角と半角</h2>
-        <p>パソコンで用いられる文字には全角、半角の違いがある場合があります。
+        <p>ここでは、次の練習問題の入力ができるかを確認します。
+            用語や方法などが分からない場合は、先に下の説明を読んでから取り組んでください。
+        </p>
+
+        <h3 class="exercise">練習</h3>
+        <p>まずは、アルファベット1文字から。</p>
+
+        <ol>
+            <li>
+                <code>a</code>（半角）
+                <div>
+                    <input type="text" pattern="a" required>
+                    <span></span>
+                </div>
+                ↑ 入力してください。正しく入力できると青くなります（以下同様）
+            </li>
+            <li>
+                <code>ａ</code>（全角）
+                <div>
+                    <input type="text" pattern="ａ" required>
+                    <span></span>
+                </div>
+                （変換候補の中から適切なものを選んでください。よく分からなければ、下の「ａｂｃ（全角）の入力の仕方」を読んでください。）
+            </li>
+        </ol>
+
+        <h3 class="exercise">練習</h3>
+        <p>つづいて、複数文字の入力練習をしてみましょう。</p>
+
+        <ol>
+            <li>
+                <code>abc（半角）</code>
+                <div>
+                    <input type="text" pattern="abc" required>
+                    <span></span>
+                </div>
+            </li>
+            <li>
+                <code>ａｂｃ（全角）</code>
+                <div>
+                    <input type="text" pattern="ａｂｃ" required>
+                    <span></span>
+                </div>
+                （うまく行かなければ、以下の説明を読んでください）
+            </li>
+        </ol>
+
+
+        <h3>全角と半角とは</h3>
+
+        <p>パソコンで用いられる文字には、似たような見た目であっても内部の取り扱いが異なるものがあります。
+        これらは入力仕分ければならない場面があります。
+        とくに皆さんのように技術系の人にとっては、これらを入力し分けるのは必須のスキルです。
+        </p>
+        <p>
         例えば、<code>A</code>と<code>Ａ</code>、違いが分かりますか。
         これならどうでしょう。
         <pre>
@@ -158,11 +96,11 @@
             正しく使い分けられていないとログイン（使用開始許可の状態になり、自分の使用領域を与えられるまでの認証操作）ができません。
         </p>
 
-        <h3 class="exercise">練習</h3>
 
-        <p>全角と半角のアルファベットを使い分けましょう。</p>
+        <h3>全角と半角の入力仕分け方</h3>
+        <h4>Windowsの場合</h4>
         <p>
-            Windowsの場合、左上隅付近にある <kbd>全角/半角</kbd>キーを適宜押して、全角、半角を切り替えてください。
+            左上隅付近にある <kbd>全角/半角</kbd>キーを適宜押して、全角、半角を切り替えてください。
             押すたびに半角・全角モードが交互に切り替わります。
             現在のモードはパソコン画面（デスクトップ）右下のインジケータ（指示アイコン）でわかります（下図）。
             <kbd>全角/半角</kbd>キーを何度か押してみて、表示が切り替わるのを確認してください。
@@ -173,8 +111,10 @@
                 <figcaption>入力モード（Windows）</figcaption>
             </figure>
         </p>
+
+        <h4>Mac の場合（かつキーボードが日本語配列の場合）</h4>
         <p>
-            Mac の場合（かつキーボードが日本語配列の場合）は、スペースキー（下の列の横長のキー）の右隣りにある <kbd>かな</kbd> キーを押すと全角になり、
+            スペースキー（下の列の横長のキー）の右隣りにある <kbd>かな</kbd> キーを押すと全角になり、
             左隣りにある <kbd>英数</kbd> キーを押すと半角になります。
             キー配列が英字配列の場合は、<kbd>control（^）</kbd>+<kbd>shift（⬆️）</kbd>+<kbd>J</kbd>、<kbd>control</kbd>+<kbd>shift</kbd>+<kbd>;</kbd>で切り替えてください。
             現在のモードは、パソコン画面（デスクトップ）右上の時刻が表示されているあたりに表示されます（下図参照）。
@@ -188,47 +128,7 @@
             </figure>
         </p>
 
-        <p>まずは、アルファベット1文字から。</p>
-        <ol>
-            <li>
-                <code>a</code>（半角）
-                <div>
-                    <input type="text" pattern="a" required>
-                    <span></span>
-                </div>
-                ↑ 入力してください。正しく入力できると青くなります（以下同様）
-            </li>
-            <li>
-                <code>ａ</code>（全角）
-                <div>
-                    <input type="text" pattern="ａ" required>
-                    <span></span>
-                </div>
-                （変換候補の中から適切なものを選んでください。よく分からなければ、下の「ａｂｃ（全角）の入力の仕方」を読んでください。）
-            </li>
-        </ol>
 
-        <h3 class="exercise">練習</h3>
-
-        <p>つづいて、複数文字の入力練習をしてみましょう。</p>
-
-        <ol>
-            <li>
-                <code>abc（半角）</code>
-                <div>
-                    <input type="text" pattern="abc" required>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <code>ａｂｃ（全角）</code>
-                <div>
-                    <input type="text" pattern="ａｂｃ" required>
-                    <span></span>
-                </div>
-                （うまく行かなければ、以下の説明を読んでください）
-            </li>
-        </ol>
 
         <p class="capslock">
             ▶︎
@@ -237,7 +137,8 @@
             </a>
         </p>
 
-        <h4><code>ａｂｃ（全角）</code>の入力の仕方</h4>
+
+        <h3><code>ａｂｃ（全角）</code>の入力の仕方</h3>
         <p>
             <code>ａｂｃ（全角）</code> は入力の仕方が難しいかもしれませんので、
             方法を2つ紹介しておきます。
@@ -315,19 +216,12 @@
             </a>
         </p>
 
+        <!--
+        **
+        *    半角記号
+        *
+        -->
         <h2>半角の記号いろいろ</h2>
-        <p>パスワードやプログラミング記号などでよく用いられる記号類の入力法について確認しておきましょう。
-            Windowsの人はスマホのソフトウェアキーボードにある地球儀🌐ボタンと
-            パソコンの<kbd>全角/半角</kbd>キーは働きが異なるということに注意してください。
-            スマホのことは一旦忘れ、以下の説明を先入観を捨てて、よく読んでください。
-        </p>
-        <p>まずは、半角を入力するモードに切り替えてください。
-            一度半角を入力するモードに切り替えれば、
-            以下の練習では途中で切り替える操作は必要ありません。
-            キーに印字されている文字のうち、12時方向に書いてある文字を入力するには <kbd>Shift</kbd> キーを押しつつ、
-            入力したいキーを押します。すでに知っていることと思いますが、
-            再確認しておきます。
-        </p>
 
         <div class="attention">
             <h3>
@@ -346,8 +240,9 @@
         </div>
 
         <h3 class="exercise">練習</h3>
-
-        <p>必ず、半角モードで入力してください！</p>
+        <p>必ず、半角モードで入力してください。
+            読みを変換してはいけません！
+        </p>
 
         <ol>
             <li>
@@ -394,7 +289,23 @@
             </a>
         </p>
 
-        <h3>記号類の入力のコツ</h3>
+        <h3>半角記号</h3>
+        <p>パスワードやプログラミング記号などでよく用いられる記号類の入力法について確認しておきましょう。
+            Windowsの人はスマホのソフトウェアキーボードにある地球儀🌐ボタンと
+            パソコンの<kbd>全角/半角</kbd>キーは働きが異なるということに注意してください。
+            スマホのことは一旦忘れ、以下の説明を先入観を捨てて、よく読んでください。
+        </p>
+        <p>まずは、半角を入力するモードに切り替えてください。
+            一度半角を入力するモードに切り替えれば、
+            以下の練習では途中で切り替える操作は必要ありません。
+            キーに印字されている文字のうち、12時方向に書いてある文字を入力するには <kbd>Shift</kbd> キーを押しつつ、
+            入力したいキーを押します。すでに知っていることと思いますが、
+            再確認しておきます。
+        </p>
+
+
+
+        <h3>半角記号類の入力のコツ</h3>
         <p>
             慣れていない人にとっては、難しかったと思います。
             いくつかの文字について、入力の仕方を説明しておきます。
@@ -483,7 +394,7 @@
             </a>
         </p>
 
-        <h2>自由練習</h2>
+        <h2>自由練習欄</h2>
         <p>自由に練習してください。
             例えば、手元を見ずにabcを繰り返し入力してみるといいでしょう。
             標準的には<code>a</code>は左小指、<code>b</code>は左人差し指、
@@ -501,6 +412,10 @@
             で行うことができます。
             パソコンのキーボードをほとんど使ったことがないという場合は、「基本コース」から始めるとよいでしょう。
         </p>
+
+        <h2>タッチタイピングの練習アプリ</h2>
+
+        
 
 
         <h2>入力時のトラブル</h2>
