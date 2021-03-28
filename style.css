@@ -37,7 +37,7 @@ header h1 {
     position: relative;
     color: white;
     top: 300px;
-    left: 50px;
+    left: 10%;
     font-family: sans-serif;
     font-size: 40pt;
     font-weight: 400;
@@ -47,7 +47,7 @@ main {
     width: 80%;
     max-width: 50rem;
     margin: auto;
-    padding: 5rem;
+    padding: 10rem;
     padding-bottom: 20rem;
     background-color: white;
 }
