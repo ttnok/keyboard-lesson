@@ -67,6 +67,9 @@ h3::before {
     color: rgb(216, 216, 5);
     font-size: 30pt;
 }
+h3#contents-header::before {
+    content: "";
+}
 h4 {
     margin: 2em 1em 1em;
 }
